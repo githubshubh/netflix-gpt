@@ -2,8 +2,9 @@ import React, { useRef, useState } from 'react'
 import Header from './Header';
 import { auth } from '../utils/firebase';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import {useDispatch} from 'react-redux';
-import {addUser} from '../store/userSlice'; 
+import { useDispatch } from 'react-redux';
+import { addUser } from '../store/userSlice';
+import { LOGIN_BACKGROUND } from '../utils/constants'
 
 const Login = () => {
     const [isSignInForm, setIsSignInForm] = useState(true);
@@ -68,7 +69,7 @@ const Login = () => {
         <div>
             <Header />
             <div className='absolute'>
-                <img src="https://assets.nflxext.com/ffe/siteui/vlv3/50fcc930-ba3f-4cae-9257-9f920e30a998/web/IN-en-20250310-TRIFECTA-perspective_739387a0-ff14-44ed-a5af-36e5aa4d236e_large.jpg" alt="back" />
+                <img src={LOGIN_BACKGROUND} alt="back" />
             </div>
             <form onSubmit={handleButtonClick} className='bg-black text-white absolute p-12 w-3/12 mx-auto right-0 left-0 my-32 bg-opacity-80 rounded-lg'>
                 <h1 className='text-3xl font-bold py-4'>{isSignInForm ? "Sign In" : "Sign Up"}</h1>
