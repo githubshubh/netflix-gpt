@@ -18,7 +18,7 @@ const MainContainer = () => {
     }, [])
    
     if(movies=== null) return;
-    const mainMovie = movies?.[1];
+    const mainMovie = movies?.[0];
     const {title, overview,id} = mainMovie;
     
     return (
